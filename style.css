@@ -17,7 +17,7 @@ body {
 }
 
 body.dark-mode {
-    --bg-color: #1a1a1a; /* Korrigierter Hex-Code (statt #la1ala) */
+    --bg-color: #FFFFFF;
     --text-color: #f5f5f5;
 }
 
