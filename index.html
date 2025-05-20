@@ -1,103 +1,28 @@
 <!DOCTYPE html>
 
 <html lang="de">
-  
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eldin Ukic – IT-Portfolio</title>
+  <title>Portfolio Eldin Ukci</title>
+  <!-- Verknüpfe dein CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-  
+
 <body>
-
-  <nav>
-    <a href="#about">Über mich</a>
-    <a href="#projects">Projekte</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Kontakt</a>
-    <button id="toggle-theme">🌙 Dark Mode</button>
-  </nav>
-
-   <script src="darkmode.js"></script>
+  <!-- Dark-Mode-Button -->
+  <button id="toggle-theme">🌙 Dark Mode</button>
   
-  <header>
-    <h1>Eldin Ukic</h1>
-    <p>IT-Enthusiast • Programmierung • Automation • Cybersecurity</p>
-  </header>
-
-  <section id="about">
-    <h2>Über mich</h2>
-    <p>Als leidenschaftlicher IT-Spezialist mit Fokus auf Automatisierung und Cybersecurity entwickle ich innovative Lösungen für komplexe technische Herausforderungen. Mein Motto: "Efficiency through smart automation".</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projekte</h2>
-    <div class="project-card">
-      <h3>Netzwerkmonitor</h3>
-      <p>Ein automatisiertes Überwachungssystem für Netzwerkinfrastrukturen mit Echtzeit-Analyse.</p>
-      <em>Technologien: Python, Nmap, Grafana</em><br>
-      <a href="https://github.com/EldinUkic/Netzwerkmonitor" target="_blank">→ GitHub Repository</a>
-    </div>
-    
-    <div class="project-card">
-      <h3>ProductiveMind Todo-App</h3>
-      <p>Feature-reiche Aufgabenverwaltung mit Priorisierungs- und Analysefunktionen.</p>
-      <em>Technologien: JavaScript, React, LocalStorage</em><br>
-      <a href="https://github.com/EldinUkic/Todo-App" target="_blank">→ Live Demo ansehen</a>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill-item">
-        <h3>Entwicklung</h3>
-        Python • JavaScript<br>
-        HTML5 • CSS3 • React
-      </div>
-      <div class="skill-item">
-        <h3>DevOps</h3>
-        Docker • Git • CI/CD<br>
-        Linux Administration
-      </div>
-      <div class="skill-item">
-        <h3>Cybersecurity</h3>
-        Netzwerksicherheit<br>
-        Vulnerability Scanning<br>
-        Security Audits
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Kontakt</h2>
-    <div class="contact-links">
-      <a href="mailto:eldinkontakt@example.com">📧 E-Mail</a>
-      <a href="https://github.com/EldinUkic" target="_blank">💻 GitHub</a>
-      <a href="https://linkedin.com/in/example" target="_blank">🔗 LinkedIn</a>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="currentYear"></span> Eldin Ukic – Innovating through technology
-  </footer>
-
-  <script>
-    // Dynamisches Copyright-Jahr
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    // Smooth Scroll für Navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
+  <!-- 3D-Zeichenfläche -->
+  <canvas id="scene"></canvas>
   
-  </script>
+  <!-- Deine Logik-Skripte -->
+  <script src="darkmode.js"></script>
+  
+  <!-- Three.js von CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script src="app.js"></script>
   
 </body>
 </html>
