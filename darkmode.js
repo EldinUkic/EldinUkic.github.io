@@ -1,28 +1,23 @@
+// 1. Den Button holen
 const btn = document.getElementById("toggle-theme");
 
-// Systemeinstellung berücksichtigen
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const storedPreference = localStorage.getItem("dark-mode");
-let isDark = storedPreference !== null ? JSON.parse(storedPreference) : systemPrefersDark;
-
-function updateTheme() {
-    document.body.classList.toggle("dark-mode", isDark);
-    btn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
-    localStorage.setItem("dark-mode", JSON.stringify(isDark));
+// 2. Zustand aus localStorage wiederherstellen
+if (localStorage.getItem("dark-mode") === "true") {
+  document.body.classList.add("dark-mode");
+  btn.textContent = "☀️ Light Mode";
 }
 
-// Initialisierung
-updateTheme();
-
+// 3. Klick-Listener setzen
 btn.addEventListener("click", () => {
-    isDark = !isDark;
-    updateTheme();
-});
+  // Dark-Mode-Klasse umschalten
+  document.body.classList.toggle("dark-mode");
 
-// Auf Systemänderungen reagieren
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if (!localStorage.getItem("dark-mode")) {
-        isDark = e.matches;
-        updateTheme();
-    }
+  // Prüfen, ob Dark Mode aktiv ist
+  const isDark = document.body.classList.contains("dark-mode");
+
+  // Button-Text anpassen
+  btn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+
+  // Zustand speichern
+  localStorage.setItem("dark-mode", isDark);
 });
