@@ -8,7 +8,7 @@ if (localStorage.getItem("dark-mode") === "true") {
 
 // Wenn man auf den Button klickt
 btn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");       // Schalte zwischen Hell/Dunkel
+  document.body.classList.toggle(".dark-mode");       // Schalte zwischen Hell/Dunkel
 
   const istDunkel = document.body.classList.contains("dark-mode");
 
