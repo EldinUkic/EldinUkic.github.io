@@ -101,3 +101,22 @@ a {
   nav a { display: block; margin: 0.5rem 0; }
   h1 { font-size: 2rem; }
 }
+
+#toggle-theme {
+  position: fixed;       /* bleibt beim Scrollen sichtbar */
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+#toggle-theme:hover {
+  background: var(--primary);
+}
