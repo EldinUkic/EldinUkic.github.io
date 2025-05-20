@@ -8,7 +8,7 @@
 /* Canvas und Body sollen 100% der Höhe füllen */
 html, body {
   height: 100%;
-  background-color: var(--bg-color, #111); /* Standardhintergrund */
+  background-color: var(--bg-color); /* Standardhintergrund */
   color: var(--text-color, #eee);           /* Standardtextfarbe */
   font-family: 'Segoe UI', system-ui, sans-serif;
 }
